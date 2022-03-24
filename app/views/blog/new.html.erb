@@ -1,0 +1,16 @@
+<h1> Create a New Blog Post </h1>
+<%= form_with model:@blog do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+<br>
+  <%= form.label :content %>
+  <%= form.text_field :content %>
+</br>
+<br>
+  <%= form.submit 'Add Blog Post' %>
+</br>
+<% end %>
+
+<br>
+<%= link_to 'Back to Blog Posts', blogs_path %>
+</br>
