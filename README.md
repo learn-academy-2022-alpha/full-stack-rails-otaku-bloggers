@@ -126,3 +126,32 @@ As a user, I can update my blog post.
 As a developer, I can ensure that all blog posts have titles and content for each post.
 As a developer, I can ensure that all blog post titles are unique.
 As a developer, I can ensure that blog post titles are at least 10 characters.
+
+
+
+%= form_with model: @blog, url: "blogs/#{@blog.id}", method: 'patch' do |form| %>
+
+
+def delete
+@blog = Blog.find(params[:id]).destroy
+redirect_to blogs_path
+end
+
+def update
+@blog = Blog.find(params[:id])
+@blog.update(blog_params)
+if @blog.valid?
+redirect_to blogs_path(@blog)
+else
+redirect_to edit_post_path
+end
+end
+
+def edit
+@blog = Blog.find(params[:id])
+end
+
+
+<%=  link_to 'Update Post', editpost_path %>
+
+

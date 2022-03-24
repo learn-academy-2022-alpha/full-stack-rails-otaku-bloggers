@@ -3,10 +3,11 @@
 <p> <%= @blog.content %> </p>
 
 <br>
-<%= link_to 'Back to Blog Posts', blogs_path %>
+  <%= link_to 'Back to Blog Posts', blogs_path %>
 </br>
 
 
 <br>
-<%= button_to "Delete Post", { action: "delete", id: @blog.id }, method: :delete %>
+  <%= button_to "Delete Post", { action: "delete", id: @blog.id }, method: :delete %>
 </br>
+<%=  link_to 'Update Post', editpost_path %>
